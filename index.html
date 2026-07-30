@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SPS Academy</title>
+<meta name="description" content="Credit-bearing AI and technical skills modules. Start small, stack credits toward a national qualification, and earn B-BBEE Skills Development points — delivered through an accredited provider.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="brand.js"></script>
+</head>
+<body data-page="home" data-title="Empowering the people who power SPS">
+
+<!-- ============ NAV (rendered from brand.js) ============ -->
+<nav id="nav"></nav>
+<script>SITE.renderNav()</script>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="hero-photo" style="background-image:url(https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1800&q=80)"></div>
+  <div class="hero-inner">
+    <h1>Welcome to <span data-b="academyName">SPS Academy</span></h1>
+    <p class="lead">Credit-bearing AI &amp; technical skills for the people who power <span data-b="companyShort">SPS</span>.</p>
+    <form class="hero-search" data-search-form>
+      <input type="text" placeholder="What do you want to learn?" aria-label="Search modules">
+      <button class="go" type="submit" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></button>
+    </form>
+    <div class="hero-cta">
+      <a href="modules.html" class="btn btn-soft">Explore our modules</a>
+      <a href="contact.html" class="btn btn-white">Talk to our team</a>
+    </div>
+  </div>
+  <div class="hero-curve"><svg viewBox="0 0 1440 70" preserveAspectRatio="none"><path d="M0,70 L0,34 C280,72 620,72 720,50 C860,20 1180,6 1440,44 L1440,70 Z" fill="#ffffff"/></svg></div>
+</header>
+
+<!-- ============ FEATURED MODULES ============ -->
+<section>
+  <div class="wrap">
+    <div class="row-head reveal">
+      <div>
+        <span class="eyebrow">Start today</span>
+        <h2>Featured modules</h2>
+      </div>
+      <div class="carousel-nav">
+        <button data-car-prev aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+        <button data-car-next aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="carousel">
+      <div class="carousel-track" id="featuredTrack"><!-- rendered by app.js --></div>
+    </div>
+    <div class="center-btn"><a href="modules.html" class="btn btn-soft">View all modules</a></div>
+  </div>
+</section>
+
+<!-- ============ CATEGORIES ============ -->
+<section class="section-soft">
+  <div class="wrap">
+    <div class="cat-wrap">
+      <div class="reveal">
+        <h2 style="font-size:clamp(28px,3.6vw,42px)">Explore top categories</h2>
+        <p style="color:var(--muted);font-size:18px;margin-top:14px">Credit-bearing modules and skills courses, grouped by topic.</p>
+      </div>
+      <div class="cat-track reveal">
+        <a class="cat-tile cat-c1" href="modules.html?q=Business"><div class="cat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div><p>Business</p></a>
+        <a class="cat-tile cat-c2" href="modules.html?q=Compliance"><div class="cat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div><p>Compliance</p></a>
+        <a class="cat-tile cat-c3" href="modules.html?q=Leadership"><div class="cat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><p>Leadership</p></a>
+        <a class="cat-tile cat-c4" href="modules.html?q=Computer%20Science"><div class="cat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="m8 9 2 2-2 2M13 13h3"/></svg></div><p>Computer Science</p></a>
+        <a class="cat-tile cat-c5" href="modules.html?q=Health%20%26%20Medicine"><div class="cat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M11 2a2 2 0 0 0-2 2v2H7a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2v2a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-2h2a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-2V4a2 2 0 0 0-2-2z"/></svg></div><p>Health &amp; Medicine</p></a>
+        <a class="cat-tile cat-c6" href="modules.html?q=Social%20Sciences"><div class="cat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20Z"/></svg></div><p>Social Sciences</p></a>
+        <a class="cat-tile cat-c7" href="modules.html?q=Accredited"><div class="cat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.5 13.5 17 22l-5-3-5 3 1.5-8.5"/></svg></div><p>Accredited</p></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section>
+  <div class="wrap">
+    <div class="split reveal">
+      <div class="split-media" style="background-image:url(https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1100&q=80)"></div>
+      <div>
+        <span class="eyebrow">How it works</span>
+        <h2>Modules → credits → a qualification they keep</h2>
+        <p><span data-b="academyName">SPS Academy</span> isn't a one-off course. Each module is a small, credit-bearing unit your people can start in days — not months. Every module they complete carries credits toward the <strong data-b="qualification">Occupational Certificate: Computer Technician</strong> (<span data-b="nqf">NQF 5</span>, <span data-b="credits">282</span> credits).</p>
+        <p>Delivered through an accredited provider, every module also supports your <strong>B-BBEE Skills Development</strong> scorecard — recognised training, properly documented. Your people build a portable national credential; the company earns claimable skills spend along the way.</p>
+        <a href="modules.html" class="btn btn-primary">Browse modules</a>
+      </div>
+    </div>
+
+    <div class="split rev reveal">
+      <div class="split-media grad" style="display:grid;place-items:center;color:#fff;text-align:center;padding:30px">
+        <div>
+          <div style="font-size:13px;letter-spacing:.16em;text-transform:uppercase;opacity:.85;margin-bottom:10px;font-weight:600">Accredited Qualification</div>
+          <div style="font-size:56px;font-weight:800;line-height:1" data-b="nqf">NQF&nbsp;5</div>
+          <div style="opacity:.9;margin-top:10px;font-size:15px">Qualification ID <span data-b="qualId">101408</span> · <span data-b="credits">282</span> credits</div>
+        </div>
+      </div>
+      <div>
+        <span class="eyebrow">The destination</span>
+        <h3>The accredited pathway</h3>
+        <p>The <span data-b="qualification">Occupational Certificate: Computer Technician</span> is the nationally accredited qualification the shorter modules ladder toward — delivered in association with <strong data-b="provider">Centenary Networks (Pty) Ltd</strong>, accredited by the Quality Council for Trades and Occupations (QCTO) as a Skills Development Provider.</p>
+        <p>Learners choose their modules, build credits at their own pace around their work, and earn a credential that's theirs to keep.</p>
+        <a href="course.html?c=computer-technician" class="btn btn-soft">Learn more</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY (pillars) ============ -->
+<section class="section-soft">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">For your teams</span>
+      <h2>Why this works</h2>
+    </div>
+    <div class="pillars">
+      <div class="pillar reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Start small</h3><p>Enrol someone in a single credit-bearing module — days, not months. No need to commit anyone to a full qualification up front.</p></div>
+      <div class="pillar reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 12l10 5 10-5M2 17l10 5 10-5"/></svg></div><h3>Credits accumulate</h3><p>Every module carries credits toward the accredited national qualification. Learners build toward certification at their own pace.</p></div>
+      <div class="pillar reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 14 4-4 3 3 5-6"/></svg></div><h3>Skills spend that scores</h3><p>Delivered through an accredited provider, so each module supports your B-BBEE Skills Development scorecard — recognised, documented training.</p></div>
+      <div class="pillar reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.5 13.5 17 22l-5-3-5 3 1.5-8.5"/></svg></div><h3>A credential they keep</h3><p>Employees earn a national, portable qualification — a real reason to stay, learn, and grow as the sector goes digital.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RAINBOW + PARTNERS ============ -->
+<div class="rainbow"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<section>
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Accredited delivery</span>
+      <h2>Our accreditation partner</h2>
+      <p>This academy operates in association with an accredited Skills Development Provider — so your training is recognised and scorecard-ready.</p>
+    </div>
+    <div class="partners reveal">
+      <div class="plogo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 11 4.6-2.5 8-6 8-11V5l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg> <span data-b="providerShort">Centenary Networks (QCTO)</span></div>
+      <div class="plogo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg> QCTO Skills Development</div>
+      <div class="plogo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 14 4-4 3 3 5-6"/></svg> B-BBEE Scorecard Aligned</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA BAND ============ -->
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Put your people in the driver's seat</h2>
+    <p>Start one team on a single credit-bearing module — days, not months — and let them build toward a national qualification from there.</p>
+    <a href="contact.html" class="btn btn-white">Talk to our team</a>
+  </div>
+</section>
+
+<!-- ============ FOOTER (rendered from brand.js) ============ -->
+<footer id="siteFooter"></footer>
+<script>SITE.renderFooter()</script>
+
+<script src="catalog.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module</title>
+<meta name="description" content="A credit-bearing module. Every module carries credits toward an accredited national qualification and supports your B-BBEE Skills Development scorecard.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="brand.js"></script>
+</head>
+<body data-page="modules">
+
+<nav id="nav"></nav>
+<script>SITE.renderNav()</script>
+
+<div id="courseDetail">
+  <!-- HERO -->
+  <section class="course-hero">
+    <div class="wrap">
+      <div class="crumb">
+        <a href="index.html">Home</a>
+        <span>›</span>
+        <a href="modules.html">Full catalogue of modules</a>
+        <span>›</span>
+        <span class="cur" id="crumbCur">Module</span>
+      </div>
+      <h1 id="courseTitle" style="font-size:clamp(32px,5vw,56px);font-weight:800;color:var(--ink);max-width:22ch">Module</h1>
+      <p class="lead" id="courseLead" style="font-size:18px;color:var(--body);margin-top:14px;max-width:70ch"></p>
+    </div>
+    <div class="hero-curve"><svg viewBox="0 0 1440 56" preserveAspectRatio="none"><path d="M0,56 L0,26 C320,58 560,58 720,40 C900,20 1160,10 1440,38 L1440,56 Z" fill="#ffffff"/></svg></div>
+  </section>
+
+  <!-- INFO GRID + ENROL -->
+  <div class="wrap">
+    <div class="info-layout">
+      <div class="info-grid reveal" id="infoGrid"><!-- rendered by app.js --></div>
+      <aside class="enrol-box reveal">
+        <div style="font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--body);margin-bottom:14px" id="enrolLabel">Open — enrol anytime</div>
+        <div class="price"><span id="priceMain">Enquire</span><small id="priceSub">Talk to our team for pricing</small></div>
+        <a href="contact.html" class="btn btn-primary">Talk to our team</a>
+        <p class="note">Credit-bearing toward the <span data-b="qualification">Occupational Certificate: Computer Technician</span> (<span data-b="nqf">NQF 5</span>) · supports your B-BBEE scorecard.</p>
+      </aside>
+    </div>
+  </div>
+
+  <!-- WHAT YOU'LL LEARN + ABOUT -->
+  <section class="course-body">
+    <div class="wrap">
+      <h2>What you'll learn</h2>
+      <ul class="learn-list reveal" id="learnList"></ul>
+
+      <h2 style="margin-top:56px">About this module</h2>
+      <div class="prose reveal" id="courseProse"></div>
+
+      <div class="reveal" style="margin-top:36px">
+        <a href="modules.html" class="btn btn-soft">Back to catalogue</a>
+        <a href="contact.html" class="btn btn-primary" style="margin-left:10px">Enrol a team member</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED -->
+  <section class="section-soft">
+    <div class="wrap">
+      <div class="row-head reveal"><h2>Related modules</h2></div>
+      <div class="grid-cards" id="relatedTrack" style="grid-template-columns:repeat(4,1fr)"><!-- rendered by app.js --></div>
+    </div>
+  </section>
+</div>
+
+<footer id="siteFooter"></footer>
+<script>SITE.renderFooter()</script>
+
+<script src="catalog.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

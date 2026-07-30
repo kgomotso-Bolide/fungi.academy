@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Full catalogue of modules</title>
+<meta name="description" content="Browse every credit-bearing module in the catalogue. Filter by delivery mode, topic and level. Each module ladders toward a national qualification and supports your B-BBEE scorecard.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="brand.js"></script>
+</head>
+<body data-page="modules" data-title="Full catalogue of modules">
+
+<nav id="nav"></nav>
+<script>SITE.renderNav()</script>
+
+<!-- ============ PAGE HEAD ============ -->
+<section class="pagehead">
+  <div class="wrap">
+    <div class="crumb">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <span class="cur">Full catalogue of modules</span>
+    </div>
+    <h1>Full catalogue of modules</h1>
+    <form class="cat-search" id="catSearchForm" style="margin-top:26px;max-width:760px">
+      <input type="text" id="catSearchInput" placeholder="What do you want to learn?" aria-label="Search modules">
+      <button class="go" type="submit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg> Search</button>
+    </form>
+  </div>
+  <div class="hero-curve"><svg viewBox="0 0 1440 56" preserveAspectRatio="none"><path d="M0,56 L0,26 C320,58 560,58 720,40 C900,20 1160,10 1440,38 L1440,56 Z" fill="#ffffff"/></svg></div>
+</section>
+
+<!-- ============ CATALOGUE ============ -->
+<section style="padding-top:34px">
+  <div class="wrap">
+    <button class="btn btn-ghost filter-toggle" id="filterToggle" style="margin-bottom:20px">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><path d="M4 6h16M7 12h10M10 18h4"/></svg> Filters
+    </button>
+    <div class="cat-layout">
+      <aside class="filters" id="filters">
+        <div class="filter-group">
+          <h4><span class="fico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span> Modality</h4>
+          <div id="fltModality"></div>
+        </div>
+        <div class="filter-group">
+          <h4><span class="fico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="12" r="3"/><path d="M8.6 7.5 15 10.5M8.6 16.5 15 13.5"/></svg></span> Training topics</h4>
+          <div id="fltTopic"></div>
+        </div>
+        <div class="filter-group">
+          <h4><span class="fico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 14 4-4 3 3 5-6"/></svg></span> Level</h4>
+          <div id="fltLevel"></div>
+        </div>
+      </aside>
+
+      <div>
+        <div class="toolbar">
+          <div class="count"><span id="catCount">All modules</span></div>
+          <div class="seg">
+            <button data-seg="all" class="on">All</button>
+            <button data-seg="online">Online</button>
+            <button data-seg="inperson">In-person</button>
+          </div>
+        </div>
+        <div class="grid-cards" id="catGrid"><!-- rendered by app.js --></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="siteFooter"></footer>
+<script>SITE.renderFooter()</script>
+
+<script src="catalog.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
