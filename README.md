@@ -218,10 +218,13 @@ accredited qualification.
 
 - [x] **Reverted to courses-first positioning (30 Jul 2026)** — removed all credit-bearing / stackable-credits / B-BBEE language site-wide, restored the courses-first palette, renamed `modules.html` → `courses.html` and "Modules" → "Courses" throughout. See the warning in §1.
 - [x] **Per-course outlines** — each of the 20 courses has its own tailored curriculum (`MOD_*` arrays in `course.html`).
-- [x] **Working contact form** — wired to **FormSubmit.co → accounts@cn.co.za** (redirects to `thanks.html`); real email/phone in place. *First submission triggers a one-time activation email to accounts@cn.co.za — click it to start receiving enquiries.*
-- [x] **AI assistant** — self-contained client-side helper (`Ask the Academy`) on every page: finds courses, explains how the training and accreditation work, routes to the team. No backend/API key (safe on static hosting); upgradeable to a live LLM later if a backend is added.
+- [x] **Internal voice (3 Aug 2026)** — site rewritten as Fungi's in-house academy speaking to Fungi staff, not a provider selling to clients. Signed GM message from Matt Koller on the home page; "Enquire for pricing" → "Fully funded by Fungi"; "Talk to Our Team" → "Register Your Interest"; group-rate/corporate-quote copy removed.
+- [x] **Working registration form** — wired to **FormSubmit.co → academy@fungienergy.co.za** (redirects to `thanks.html`); fields are internal (employee number, department, line manager, course). *First submission triggers a one-time activation email to academy@fungienergy.co.za — click it or registrations are silently dropped.* General enquiries listed as `info@fungienergy.co.za`. **Phone number is still the `012 345 6789` placeholder.**
+- [x] **AI assistant** — self-contained client-side helper (`Ask the Academy`) on every page: finds courses, explains how the academy works, routes to `academy@fungienergy.co.za`. No backend/API key (safe on static hosting); upgradeable to a live LLM later if a backend is added.
+- [x] **Fungi photography** — `images/matt-koller.jpg` (GM message, home), `images/class-one-2025.jpg` + `images/six-years-team.jpeg` (paired poster block on home and about). Branded posters with baked-in text — display whole, do not crop.
 - [ ] **Real content** — videos + PDFs + facilitator bios from Fungi/Centenary.
-- [ ] **Energy-sector imagery** — tilt course/hero photography toward the energy industry (copy is already energy-framed).
+- [ ] **Confirm "Fully funded by Fungi"** — appears on 26 course cards as a factual claim; soften if any course needs budget/manager approval.
+- [ ] **Real phone number** — replace the `012 345 6789` placeholder on the contact page and in the assistant.
 - [ ] **Custom domain** (e.g. `academy.sps…`) once decided.
 
 ---

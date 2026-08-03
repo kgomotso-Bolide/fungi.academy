@@ -31,16 +31,17 @@
     </div>
     <div class="contact-grid">
       <div class="contact-info reveal">
-        <p><span class="lbl">HR / People team</span><a href="mailto:accounts@cn.co.za">accounts@cn.co.za</a></p>
+        <p><span class="lbl">Academy &amp; registrations</span><a href="mailto:academy@fungienergy.co.za">academy@fungienergy.co.za</a></p>
+        <p><span class="lbl">General enquiries</span><a href="mailto:info@fungienergy.co.za">info@fungienergy.co.za</a></p>
         <p><span class="lbl">Phone</span><a href="tel:0123456789">012 345 6789</a></p>
         <p><span class="lbl">Office hours</span>Monday–Friday, 08:00–17:00 SAST</p>
         <p><span class="lbl">Course cost</span>Fully funded by Fungi</p>
         <p><span class="lbl">Delivery</span>Online · from any Fungi site or from home</p>
       </div>
-      <!-- TODO: this still posts to accounts@cn.co.za. Swap in the real HR address once
-           confirmed — formsubmit.co needs a one-time activation email per new address,
-           so changing it before that is done will silently drop submissions. -->
-      <form class="form reveal" action="https://formsubmit.co/accounts@cn.co.za" method="POST">
+      <!-- FormSubmit needs a one-time activation per address: the first submission after
+           this goes live sends a confirmation email to academy@fungienergy.co.za. Until
+           someone clicks that link, registrations are NOT delivered. -->
+      <form class="form reveal" action="https://formsubmit.co/academy@fungienergy.co.za" method="POST">
         <input type="hidden" name="_subject" value="Fungi Academy — staff course registration">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_next" value="https://kgomotso-bolide.github.io/fungi.academy/thanks">
