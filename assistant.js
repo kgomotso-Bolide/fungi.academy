@@ -69,14 +69,14 @@
   function reply(q){
     var s=q.toLowerCase();
     function has(){for(var i=0;i<arguments.length;i++){if(s.indexOf(arguments[i])>=0)return true;}return false;}
-    if(/^(hi|hello|hey|howzit|good (morning|afternoon|day)|yo|hi there)\b/.test(s)) return [T("Hi! I'm the Academy assistant. I can help you <b>find a course</b>, explain how our training works, or connect you with the team. What are you after?"),CH(["Find a course","How does it work?","Course pricing","Talk to our team"])];
+    if(/^(hi|hello|hey|howzit|good (morning|afternoon|day)|yo|hi there)\b/.test(s)) return [T("Howzit! I'm the Academy assistant. I can help you <b>find a course</b>, explain how the academy works, or point you to HR to register. What are you after?"),CH(["Find a course","How does it work?","What does it cost?","Register my interest"])];
     if(has("accredit","qcto","centenary","qualification","nqf","credential")) return [T("Our courses are delivered in association with <b>Centenary Networks</b>, a QCTO-accredited Skills Development Provider (Accreditation No. 07-QCTO/SDP180526182035). Alongside our professional AI short courses, we offer the nationally accredited <b>Occupational Certificate: Computer Technician</b>."),C([COURSES[5]])];
-    if(has("price","pricing","cost","fee","how much","rate","quote","afford")) return [T("Pricing is tailored to how many people you're enrolling. The quickest way is to <a href='contact'>talk to our team</a> for a quote, or email <a href='mailto:accounts@cn.co.za'>accounts@cn.co.za</a>."),CH(["Talk to our team"])];
-    if(has("contact","talk","human","agent","call","speak","reach","phone","email","enquire","enquiry")) return [T("You can reach the team at <a href='mailto:accounts@cn.co.za'>accounts@cn.co.za</a> or <a href='tel:0123456789'>012 345 6789</a>, or use the <a href='contact'>enquiry form</a> and we'll come back to you.")];
+    if(has("price","pricing","cost","fee","how much","rate","quote","afford","pay","free")) return [T("Nothing — every course is <b>fully funded by Fungi</b>. You just need to <a href='contact'>register your interest</a> and square the timing with your line manager."),CH(["Register my interest"])];
+    if(has("contact","talk","human","agent","call","speak","reach","phone","email","enquire","enquiry","hr","register")) return [T("Send it through to HR at <a href='mailto:accounts@cn.co.za'>accounts@cn.co.za</a> or <a href='tel:0123456789'>012 345 6789</a>, or fill in the <a href='contact'>registration form</a> and they'll come back to you.")];
     if(has("download","pdf","workbook","resource","slides","material","handout")) return [T("Every course comes with downloadable <b>PDF resources</b> — workbooks, slides, cheat sheets and reading lists — on each course page under “Downloadable resources.”")];
     if(has("video","watch","stream","play")) return [T("Courses are <b>video-led</b> — short lessons you can stream on any device, at your own pace, plus downloadable resources. Open any course and press play."),CH(["Find a course"])];
     if(has("mobile","tablet","desktop","device","laptop")) return [T("Yes — the platform works on <b>mobile, tablet and desktop</b>. Videos stream and PDFs download on any device.")];
-    if(has("how do i start","how does it work","how it works","get started","begin","enrol","enroll","sign up","how do we")) return [T("It's simple: pick a <b>course</b>, and your people learn online at their own pace — fully virtual, no travel, fitted around the working day. Want a suggestion to start with?"),CH(["Find a course","Talk to our team"])];
+    if(has("how do i start","how does it work","how it works","get started","begin","enrol","enroll","sign up","how do we")) return [T("Pick a <b>course</b>, chat to your line manager about the timing, then register your interest with HR. You study online at your own pace — no travel, fitted around your shift. Want a suggestion to start with?"),CH(["Find a course","Register my interest"])];
     if(has("find","recommend","suggest","browse","which","what course","learn","interested","topic","looking for","explore","study")){
       var f1=search(s);
       if(f1.length) return [T("Here are courses that fit:"),C(f1)];
@@ -84,7 +84,7 @@
     }
     var f=search(s);
     if(f.length) return [T("Here's what matches:"),C(f)];
-    return [T("I can help you <b>find a course</b>, explain <b>how our training works</b>, or connect you with the <b>team</b>. Try a topic like “cybersecurity,” “AI for managers” or “TinyML.”"),CH(["Find a course","How does it work?","Course pricing","Talk to our team"])];
+    return [T("I can help you <b>find a course</b>, explain <b>how the academy works</b>, or point you to <b>HR</b> to register. Try a topic like “cybersecurity,” “AI for managers” or “TinyML.”"),CH(["Find a course","How does it work?","What does it cost?","Register my interest"])];
   }
 
   var ICON_SPARK='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M18 6l-2.5 2.5M8.5 15.5 6 18"/><circle cx="12" cy="12" r="3"/></svg>';
@@ -92,7 +92,7 @@
   btn.innerHTML='<span class="dot"></span>'+ICON_SPARK+'Ask the Academy';
   var panel=document.createElement('div'); panel.className='aiw-panel'; panel.setAttribute('role','dialog');
   panel.innerHTML=
-   '<div class="aiw-head"><div class="av">'+ICON_SPARK+'</div><div><h4>Academy Assistant</h4><p>Find a course · pricing · enquiries</p></div>'+
+   '<div class="aiw-head"><div class="av">'+ICON_SPARK+'</div><div><h4>Academy Assistant</h4><p>Find a course · how it works · register</p></div>'+
    '<button class="x" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>'+
    '<div class="aiw-body"></div>'+
    '<div class="aiw-foot"><input type="text" placeholder="Ask about our courses…" aria-label="Message"><button class="aiw-send" aria-label="Send"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></button></div>';
@@ -109,7 +109,7 @@
   }
   function send(text){ if(!text||!text.trim())return; addMsg('me',escapeHtml(text)); inp.value=''; botTurn(reply(text)); }
 
-  function open(){ panel.classList.add('open'); btn.style.display='none'; if(!seeded){ seeded=true; botTurn([T("Hi! I'm the Academy assistant. I can help you <b>find a course</b>, explain how our training works, or connect you with the team."),CH(["Find a course","How does it work?","Course pricing","Talk to our team"])]); } inp.focus(); }
+  function open(){ panel.classList.add('open'); btn.style.display='none'; if(!seeded){ seeded=true; botTurn([T("Howzit! I'm the Academy assistant. I can help you <b>find a course</b>, explain how the academy works, or point you to HR to register."),CH(["Find a course","How does it work?","What does it cost?","Register my interest"])]); } inp.focus(); }
   function close(){ panel.classList.remove('open'); btn.style.display=''; }
   btn.addEventListener('click',open);
   panel.querySelector('.x').addEventListener('click',close);

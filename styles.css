@@ -301,6 +301,27 @@ footer{background:var(--dark);color:#a8a39d;padding:52px 0 30px;font-size:14px}
 .vmodal .vclose{position:absolute;top:-14px;right:-6px;transform:translateY(-100%);background:#fff;color:#222;border:0;border-radius:30px;padding:8px 16px;font-weight:700;font-size:13px;cursor:pointer;display:flex;align-items:center}
 @media(max-width:1000px){.vmodal .vclose{top:8px;right:8px;transform:none;z-index:3}}
 
+/* GM MESSAGE */
+.gm{display:grid;grid-template-columns:300px 1fr;gap:46px;align-items:center;max-width:1020px;margin:0 auto}
+.gm-photo{border-radius:18px;overflow:hidden;background:var(--dark);box-shadow:0 26px 60px -30px rgba(16,51,63,.65)}
+.gm-photo img{width:100%;display:block}
+.gm .eyebrow{display:block;margin-bottom:16px}
+.gm blockquote{margin:0;color:var(--ink-soft);font-size:16.5px;line-height:1.7}
+.gm blockquote p{margin-bottom:16px}
+.gm blockquote p:last-of-type{margin-bottom:0}
+.gm blockquote p.big{font-size:clamp(20px,2.5vw,27px);font-weight:700;line-height:1.4;letter-spacing:-.01em;color:var(--grey)}
+.gm .sig{margin-top:26px;padding-top:20px;border-top:1px solid var(--line)}
+.gm .sig strong{display:block;font-size:16px;color:var(--grey)}
+.gm .sig span{font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--orange-deep)}
+
+/* ACADEMY POSTERS */
+.posters{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start}
+.poster{margin:0;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 20px 50px -32px rgba(16,51,63,.55)}
+.poster img{width:100%;display:block}
+.poster figcaption{padding:18px 20px 20px;font-size:14.5px;line-height:1.65;color:var(--ink-soft)}
+.poster figcaption strong{display:block;font-size:15.5px;color:var(--grey);margin-bottom:5px}
+.instructor img.logo{object-fit:contain;padding:20px;background:var(--bg-soft);border:1px solid var(--line)}
+
 /* REVEAL */
 .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
 .reveal.in{opacity:1;transform:none}
@@ -318,6 +339,9 @@ footer{background:var(--dark);color:#a8a39d;padding:52px 0 30px;font-size:14px}
   .accredited-feature .side .nqf small{margin-top:0}
   .chero-grid{grid-template-columns:1fr;gap:34px}
   .vgrid,.dgrid{grid-template-columns:1fr 1fr}
+  .gm{grid-template-columns:1fr;gap:28px}
+  .gm-photo{max-width:300px}
+  .posters{grid-template-columns:1fr;max-width:520px;margin:0 auto}
 }
 @media(max-width:900px){
   .nav-inner{position:relative}
