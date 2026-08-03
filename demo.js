@@ -2,14 +2,14 @@
   (function(){
     const chat=document.getElementById('aiChat'),tabs=document.getElementById('aiTabs');if(!chat||!tabs)return;
     const SCENES=[
-      {u:"Draft a friendly email to a client letting them know their order ships Friday and apologising for the earlier delay.",
-       b:"<b>Subject: Your order ships Friday</b><br><br>Hi Thandi,<br><br>Good news — your order is packed and will ship this <b>Friday</b>. Apologies for the earlier delay; thank you for your patience. You'll receive tracking the moment it's on the way.<br><br>Warm regards,<br>The Team"},
-      {u:"Summarise this 12-page quarterly report into 3 key points for our leadership meeting.",
-       b:"Here are the 3 headlines from the report:<br><br>• <b>Revenue up 18%</b> QoQ, led by the new online channel.<br>• <b>Support costs down 22%</b> after automating routine queries.<br>• <b>Risk:</b> one supplier now accounts for 40% of stock — worth diversifying."},
-      {u:"I have 5,000 rows of sales data. Which regions are underperforming and why?",
-       b:"Analysis complete:<br><br>• <b>Western Cape & Gauteng</b> are on target.<br>• <b>Eastern Cape is 31% below forecast</b> — driven by two months of stock-outs.<br>• Recommended action: rebalance inventory and review the regional delivery lead time."},
-      {u:"Plan a 6-week project to roll out AI training across a 40-person team.",
-       b:"Here's a phased plan:<br><br>• <b>Wk 1–2:</b> Skills assessment + AI fundamentals for all staff.<br>• <b>Wk 3–4:</b> Role-based tool training (sales, ops, admin).<br>• <b>Wk 5:</b> Hands-on projects on real workflows.<br>• <b>Wk 6:</b> Review, measure time saved, set team standards."}
+      {u:"Draft an email to a tenant whose bill jumped — her meter was estimated for two months and we've now taken an actual reading.",
+       b:"<b>Subject: Your statement — actual reading now taken</b><br><br>Hi Nomsa,<br><br>Your latest statement is higher than usual because we couldn't access your meter in June or July, so both months were <b>estimated</b>. We've now taken an actual reading (<b>04 821 kWh</b>) and the catch-up for those two months appears on this invoice.<br><br>Your tariff hasn't changed. If you'd prefer to spread the difference over three months, reply to this mail and we'll set that up.<br><br>Kind regards,<br>Fungi Customer Care"},
+      {u:"Summarise this month's metering report into 3 points for the ops meeting.",
+       b:"Three things worth raising:<br><br>• <b>Reading success rate 96.4%</b> — up from 91% since the Route 7 handsets were replaced.<br>• <b>Non-technical losses at Sandton Ridge still 14%</b> — three meters flagged for bypass inspection.<br>• <b>212 estimated reads</b> this cycle, 78% of them in two complexes with access problems — worth booking after-hours visits."},
+      {u:"Here's 5,000 rows of half-hourly consumption data. Which meters look wrong?",
+       b:"Three anomalies stand out:<br><br>• <b>14 meters reading zero for 30+ days</b> while the units are occupied — likely stalled or bypassed.<br>• <b>Meter 8842-C draws 4.1 kW at 02:00 every night</b> — that's a geyser-sized load on an empty tariff profile.<br>• <b>Block D's bulk meter is 11% above</b> the sum of its sub-meters — check calibration before you send anyone out."},
+      {u:"Plan a 6-week rollout to install prepaid smart meters across a 480-unit estate.",
+       b:"Here's a phased plan:<br><br>• <b>Wk 1:</b> Site survey + asset register; confirm DB positions and access windows.<br>• <b>Wk 2–4:</b> Two teams, 40 installs a day, commissioned to the vending platform same-day.<br>• <b>Wk 5:</b> Tenant onboarding — vending, balance checks, WhatsApp help line.<br>• <b>Wk 6:</b> Reconcile bulk vs sub-meter readings, close out exceptions, hand over to billing."}
     ];
     let active=-1,timer=null;
     const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;');
