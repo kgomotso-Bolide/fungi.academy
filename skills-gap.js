@@ -103,7 +103,7 @@
      than asking the same four questions twice. Ratings are never prefilled:
      they're a point-in-time self-assessment, and seeding last year's answers
      would bias this year's. */
-  var PROF=window.FungiProfile||null;
+  var PROF=(typeof window!=='undefined'&&window.FungiProfile)||null;
   var prefilled=false;
   if(PROF&&PROF.exists()){
     var pp=PROF.get();
