@@ -99,6 +99,18 @@
   var answers={role:'',qual:'',years:'',bg:'',self:{}};
   SKILLS.forEach(function(s){answers.self[s.k]=null;});
 
+  /* If a profile exists, step 1 is already answered — carry it across rather
+     than asking the same four questions twice. Ratings are never prefilled:
+     they're a point-in-time self-assessment, and seeding last year's answers
+     would bias this year's. */
+  var PROF=window.FungiProfile||null;
+  var prefilled=false;
+  if(PROF&&PROF.exists()){
+    var pp=PROF.get();
+    ['role','qual','years','bg'].forEach(function(k){ if(pp[k]) answers[k]=pp[k]; });
+    prefilled=!!(answers.role&&answers.qual&&answers.years&&answers.bg);
+  }
+
   function byKey(list,k){for(var i=0;i<list.length;i++){if(list[i].k===k)return list[i];}return null;}
   function strip(h){return String(h).replace(/&amp;/g,'&');}
 
@@ -180,6 +192,7 @@
       '<div class="sg-stepnum">Step 1 of 3</div>'+
       '<h3>A bit about you</h3>'+
       '<p class="sg-intro">This shapes what we compare you against — a target for a metering technician is not the target for someone in billing.</p>'+
+      (prefilled?'<p class="prefill-note">Filled in from <a href="profile">your profile</a>. Change anything that\'s moved on since.</p>':'')+
       '<div class="two">'+
         sel('sgRole',ROLES,'Your role at Fungi')+
         sel('sgYears',YEARS,'Years doing this kind of work')+
@@ -298,10 +311,11 @@
       (a.recs.length?'':'<p class="sg-intro">Nothing is showing a meaningful gap — talk to your manager about a stretch goal instead.</p>')+
       '<div class="sg-actions">'+
         '<a class="btn btn-primary" href="contact?course='+encodeURIComponent(strip(a.recs.length?a.recs[0].c.n:''))+'">Register for '+(a.recs.length?'the first one':'a course')+'</a>'+
+        (PROF?'<button class="btn btn-ghost-dark" id="sgSave">Save to my profile</button>':'')+
         '<button class="btn btn-ghost-dark" id="sgPrint">Print / save as PDF</button>'+
         '<button class="btn btn-ghost-dark" id="sgRestart">Start over</button>'+
       '</div>'+
-      '<p class="sg-priv">Your answers were never uploaded — they stay in this browser and disappear when you close the tab. Print this page if you want to take it to your manager.</p>'+
+      '<p class="sg-priv" id="sgPriv">Your answers were never uploaded. Unless you save them to your profile they disappear when you close the tab — and even saved, they only ever sit in this browser on this device. Print this page if you want to take it to your manager.</p>'+
     '</div>';
     return html;
   }
@@ -362,6 +376,21 @@
         if(open){bx.removeAttribute('hidden');tb.textContent='Hide the numbers';}
         else{bx.setAttribute('hidden','');tb.textContent='Show the numbers';}
         tb.setAttribute('aria-expanded',open?'true':'false');
+      });
+      var sv=document.getElementById('sgSave');
+      if(sv) sv.addEventListener('click',function(){
+        if(!PROF.available()){ sv.textContent='Storage is blocked in this browser'; sv.disabled=true; return; }
+        var a2=analyse();
+        var ok=PROF.save({
+          role:answers.role,qual:answers.qual,years:answers.years,bg:answers.bg,
+          skills:{
+            date:new Date().toISOString(),
+            role:strip(a2.role.n),
+            rows:a2.rows.map(function(r){return {k:r.k,n:r.n,self:r.self,target:r.target,gap:r.gap};})
+          }
+        });
+        sv.textContent=ok?'Saved to your profile':'Could not save';
+        sv.disabled=true;
       });
       document.getElementById('sgPrint').addEventListener('click',function(){window.print();});
       document.getElementById('sgRestart').addEventListener('click',function(){
