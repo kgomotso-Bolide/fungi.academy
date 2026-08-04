@@ -298,7 +298,7 @@
     "responsible-ai":{title:"Responsible & Ethical AI Use",cat:"Compliance",mode:"Online · Self-paced",level:"Intermediate",img:"1620712943543-bcc4688e7485",lead:"Using AI safely at work: data privacy, accuracy, bias, and the practical do's and don'ts of AI in a professional setting."},
     "ai-leaders":{title:"AI for Leaders & Managers",cat:"Leadership",mode:"Online · Self-paced",level:"Intermediate",img:"1552664730-d307ca884978",lead:"For Fungi managers and team leads: spotting AI opportunities in your department, leading AI-enabled teams, and driving responsible adoption across the business."},
     "new-venture":{title:"AI & New Venture Creation",cat:"Computer Science",mode:"Online · Self-paced",level:"Intermediate",avail:"Coming Soon",img:"1559136555-9303baea8ebd",lead:"Explore how AI is enabling new business models and entrepreneurial opportunities across Africa's growing digital economy."},
-    "computer-technician":{title:"Occupational Certificate: Computer Technician",cat:"Technical",mode:"Online",level:"Advanced",img:"1581092160562-40aa08e78837",lead:"The full technical qualification — computer systems, hardware and support, covered properly. The formal route for our technicians and field teams."},
+    "computer-technician":{title:"Occupational Certificate: Computer Technician",cat:"Technical",mode:"Online",level:"NQF 5",acc:"local",qid:"101408",credits:"282",img:"1581092160562-40aa08e78837",lead:"The full technical qualification — computer systems, hardware and support, covered properly. The formal route for our technicians and field teams."},
     "deploying-tinyml":{title:"Deploying TinyML",cat:"Computer Science",mode:"Online · Self-paced",level:"Advanced",img:"1593376853899-fbb47a057fa0",lead:"Learn to program in TensorFlow Lite for microcontrollers, write the code, and deploy your model to your very own tiny microcontroller — implementing an entire TinyML application."},
     "fundamentals-tinyml":{title:"Fundamentals of TinyML",cat:"Computer Science",mode:"Online · Self-paced",level:"Intermediate",img:"1518770660439-4636190af475",lead:"Focusing on the basics of machine learning and embedded systems, this course introduces you to the “language” of TinyML."},
     "ai-strategy":{title:"AI Strategy for Business Leaders: From Hype to Impact",cat:"Business",mode:"Online Live",level:"Executive",img:"1542744173-8e7e53415bb0",lead:"Leverage new technologies to build real, measurable value for Fungi — moving AI from hype to impact."},
@@ -340,13 +340,17 @@
 
     // tags
     const tags=[];
+    if(c.acc==="local")tags.push('<span class="accred">Locally accredited · NQF 5</span>');
+    if(c.acc==="intl")tags.push('<span class="accred">Internationally accredited</span>');
     tags.push('<span>'+ESC(c.cat)+'</span>','<span>'+ESC(c.mode)+'</span>','<span>'+ESC(c.level)+'</span>');
     if(c.avail)tags.push('<span>'+ESC(c.avail)+'</span>');
     document.getElementById('c-tags').innerHTML=tags.join('');
 
     // facts
     let nLessons=0;modules.forEach(m=>nLessons+=m.lessons.length);
-    const facts=[["Duration",c.accred?"12 months":"6 weeks"],["Effort",c.accred?"Part-time":"3–4 hrs / week"],["Format","Video + workbooks"],["Lessons",nLessons+" videos"],["Resources","5 PDF downloads"]];
+    const facts=[["Duration",c.acc?"12 months":"6 weeks"],["Effort",c.acc?"Part-time":"3–4 hrs / week"],["Format","Video + workbooks"],["Lessons",nLessons+" videos"],["Resources","5 PDF downloads"]];
+    if(c.qid)facts.push(["SAQA qualification ID",c.qid]);
+    if(c.credits)facts.push(["Credits",c.credits]);
     document.getElementById('c-facts').innerHTML=facts.map(f=>'<div><span>'+f[0]+'</span><strong>'+f[1]+'</strong></div>').join('');
 
     // hero video
