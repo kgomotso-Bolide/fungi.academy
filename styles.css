@@ -81,14 +81,14 @@ section{padding:80px 0}
 .hero-tagline{display:inline-flex;flex-wrap:wrap;align-items:center;gap:10px;font-size:12.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--grey);border-top:2px solid var(--accent);padding-top:14px;margin:0 0 28px}
 .hero-tagline i{color:var(--accent);font-style:normal}
 
-.accred-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px;box-shadow:0 24px 60px -30px rgba(0,0,0,.2);position:relative;overflow:hidden}
-.accred-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(var(--accent),var(--green))}
-.accred-card .badge{display:inline-flex;align-items:center;gap:7px;background:var(--green-tint);color:var(--green-deep);font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:6px 12px;border-radius:30px;margin-bottom:16px}
-.accred-card h3{font-size:19px;margin-bottom:6px}
-.accred-card .qual{color:var(--ink-soft);font-size:14px;margin-bottom:20px}
-.accred-card .meta{display:grid;grid-template-columns:1fr 1fr;gap:16px;border-top:1px solid var(--line);padding-top:18px}
-.accred-card .meta div span{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:#9a948c;margin-bottom:3px}
-.accred-card .meta div strong{font-size:15px;color:var(--grey)}
+.hero-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px;box-shadow:0 24px 60px -30px rgba(0,0,0,.2);position:relative;overflow:hidden}
+.hero-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(var(--accent),var(--green))}
+.hero-card .badge{display:inline-flex;align-items:center;gap:7px;background:var(--green-tint);color:var(--green-deep);font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:6px 12px;border-radius:30px;margin-bottom:16px}
+.hero-card h3{font-size:19px;margin-bottom:6px}
+.hero-card .qual{color:var(--ink-soft);font-size:14px;margin-bottom:20px}
+.hero-card .meta{display:grid;grid-template-columns:1fr 1fr;gap:16px;border-top:1px solid var(--line);padding-top:18px}
+.hero-card .meta div span{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:#9a948c;margin-bottom:3px}
+.hero-card .meta div strong{font-size:15px;color:var(--grey)}
 
 /* FEATURES / PILLARS */
 .features{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
@@ -144,8 +144,6 @@ section{padding:80px 0}
 .ccard-foot{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:14px;margin-top:auto}
 .ccard-foot .price{font-size:15px;font-weight:800;color:var(--grey)}
 .ccard-foot .avail{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--ink-soft)}
-.ccard.accred-card-wrap{border-color:var(--orange)}
-.ccard.accred-card-wrap .ccard-foot .price{color:var(--orange)}
 .soon-note{text-align:center;color:var(--ink-soft);font-size:14.5px;margin-top:30px;font-style:italic}
 
 .corp{background:linear-gradient(120deg,var(--orange-tint),var(--green-tint));border-radius:18px;padding:40px;display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap;margin-top:50px}
@@ -489,9 +487,9 @@ footer{background:var(--dark);color:#a8a39d;padding:52px 0 30px;font-size:14px}
   .nav-inner{padding:11px 18px}
   .hero{padding:104px 0 60px}
   .hero h1{font-size:clamp(28px,8vw,40px)}
-  .features,.course-grid,.outcomes,.form .two,.accred-card .meta,.learn,.vgrid,.dgrid{grid-template-columns:1fr}
+  .features,.course-grid,.outcomes,.form .two,.hero-card .meta,.learn,.vgrid,.dgrid{grid-template-columns:1fr}
   .btn-row{gap:10px}.btn-row .btn{flex:1;text-align:center}
-  .accred-card{padding:22px}
+  .hero-card{padding:22px}
   .corp{padding:28px;flex-direction:column;align-items:flex-start;text-align:left}
   .corp .btn{width:100%;text-align:center}
   .ai-chat{padding:18px 15px;min-height:0}.ai-msg{max-width:100%}

@@ -88,7 +88,7 @@
     {s:'competing-age-ai',        n:'Competing in the Age of AI',                   c:'Business',           w:{lead:3,report:1}},
     {s:'leadership-emerging-tech',n:'Leadership in Emerging Technology',            c:'Social Sciences',    w:{lead:3,resp:2,tech:1}},
     {s:'cybersecurity',           n:'Cybersecurity: Policy &amp; Technology',           c:'Social Sciences',    w:{resp:3,tech:2}},
-    {s:'computer-technician',     n:'Occupational Certificate: Computer Technician',c:'Accredited · NQF 5', w:{tech:4,admin:1}, accredited:true},
+    {s:'computer-technician',     n:'Occupational Certificate: Computer Technician',c:'Technical',           w:{tech:4,admin:1}, formal:true},
     {s:'fundamentals-tinyml',     n:'Fundamentals of TinyML',                       c:'Computer Science',   w:{tech:3,data:2}},
     {s:'deploying-tinyml',        n:'Deploying TinyML',                             c:'Computer Science',   w:{tech:4,data:2}},
     {s:'agentic-ai',              n:'Agentic AI Foundations',                       c:'Computer Science',   w:{ai:2,tech:2,resp:1}},
@@ -132,15 +132,15 @@
     var experienced=yrs.v>=4;
 
     scored.forEach(function(x){
-      if(x.c.accredited){
+      if(x.c.formal){
         if(techRole&&underQualified){
           x.score*=1.8;
           x.why=experienced
-            ? 'You have the years on the tools but not the certificate to prove it. This is the qualification that closes that.'
-            : 'The accredited route for a technical role — nationally recognised, and it builds the technical base the rest sits on.';
+            ? 'You have the years on the tools but nothing on paper to show for them. This is the qualification that closes that.'
+            : 'The full technical route — it builds the base the rest of your role sits on, and it is yours to keep.';
         } else if(techRole){
           x.score*=1.15;
-          x.why='Formalises the technical side of your role with a nationally recognised NQF 5 qualification.';
+          x.why='Puts the technical side of your role on a formal footing rather than adding another short course.';
         }
       }
       if(a.bg==='first'&&x.c.s==='ai-fundamentals'){
@@ -285,7 +285,7 @@
       '<h3>What we suggest you take</h3>'+
       '<p class="sg-intro">Ranked by how much of your gap each course actually closes — not by what is popular.</p>'+
       '<div class="sg-recs">'+a.recs.map(function(x,i){
-        return '<a class="sg-rec'+(x.c.accredited?' accred':'')+'" href="course?c='+x.c.s+'">'+
+        return '<a class="sg-rec'+(x.c.formal?' accred':'')+'" href="course?c='+x.c.s+'">'+
           '<div class="sg-rank">'+(i+1)+'</div>'+
           '<div class="sg-recbody">'+
             '<div class="sg-reccat">'+x.c.c+'</div>'+
