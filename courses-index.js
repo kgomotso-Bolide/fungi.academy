@@ -104,6 +104,27 @@
   apply();
 })();
 
+/* ---- External course cards ----
+   The international courses are hosted by Google, Microsoft, Coursera and
+   Helsinki, so they link straight out. Giving them a Fungi course page would
+   mean inventing modules, videos and workbooks we don't own — the outbound
+   link is the honest version. cards.js only rewires cards whose titles it
+   recognises, so it leaves these alone. */
+(function(){
+  [].slice.call(document.querySelectorAll('.ccard[data-href]')).forEach(function(c){
+    var url=c.dataset.href, h=c.querySelector('h4');
+    if(h&&!h.querySelector('a')){
+      h.innerHTML='<a href="'+url+'" target="_blank" rel="noopener noreferrer" '+
+        'style="color:inherit">'+h.innerHTML+'</a>';
+    }
+    c.style.cursor='pointer';
+    c.addEventListener('click',function(e){
+      if(e.target.closest('a,button')) return;   // let the link and the badge do their own thing
+      window.open(url,'_blank','noopener');
+    });
+  });
+})();
+
 /* ---- Accreditation badge popover ----
    Hover covers pointer users; click/Enter is what makes it reachable on touch
    and by keyboard, which a hover-only tooltip never is. */

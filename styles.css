@@ -367,6 +367,22 @@ footer{background:var(--dark);color:#a8a39d;padding:52px 0 30px;font-size:14px}
    until it was told to hug its own content. */
 .ccard-body .acc-badge{margin-bottom:9px;align-self:flex-start;width:-moz-fit-content;width:fit-content}
 
+/* PROVIDER / COST LINE — international cards only.
+   Cost is the first thing anyone wants to know about an outside course, so it
+   gets a pill of its own rather than being buried in the description. */
+.ccard-prov{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:10px}
+.ccard-prov .pv{font-size:12.5px;font-weight:800;color:var(--ink)}
+.ccard-prov .fr{font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;
+  background:var(--green-tint);color:var(--green-deep);border-radius:20px;padding:3px 9px}
+.ccard-prov .fr.part{background:var(--orange-tint);color:var(--orange-deep)}
+.ccard-prov .du{font-size:12.5px;color:var(--ink-soft)}
+
+/* Standing note above a band of cards */
+.band-note{max-width:820px;margin:-4px 0 26px;font-size:15px;line-height:1.75;color:var(--ink-soft)}
+.band-note p+p{margin-top:11px}
+.band-note strong{color:var(--ink)}
+.band-note a{color:var(--orange-deep);font-weight:700;text-decoration:underline}
+
 /* COURSE INDEX (search + filters) */
 .cx{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin-bottom:34px;
   box-shadow:0 20px 46px -34px rgba(16,51,63,.5)}
