@@ -219,6 +219,11 @@ accredited qualification.
 - [x] **Reverted to courses-first positioning (30 Jul 2026)** — removed all credit-bearing / stackable-credits / B-BBEE language site-wide, restored the courses-first palette, renamed `modules.html` → `courses.html` and "Modules" → "Courses" throughout. See the warning in §1.
 - [x] **Per-course outlines** — each of the 20 courses has its own tailored curriculum (`MOD_*` arrays in `course.html`).
 - [x] **Catalogue expanded to 800 (4 Aug 2026)** — announcement band + stat row on the home page, a catalogue notice on `courses.html`, and updated copy on about / skills-gap / the assistant. Framed as a **mixed catalogue** ("800 qualifications and courses", accredited items badged individually) because the accreditation status of the full 800 is not yet confirmed — see the open item below before upgrading that wording.
+- [x] **Intake announced: 10 September 2026 (12 Aug 2026)** — Centenary confirmed the start date, so it's
+  on the landing page as a dark band under the hero, on the catalogue card, on the qualification page
+  (via a `starts` field on the course record) and as the planner default. The date is the provider's;
+  the per-module dates on `pm-schedule` are still ours, and that page now names the difference rather
+  than blurring it. `OFFICIAL_DATES` stays null — we have a start, not a programme calendar.
 - [ ] **Confirm what the 800 actually are** — how many are accredited, and under whose scope (Centenary's QCTO accreditation, or another provider). "Accredited qualification" is a regulated claim in SA and the footer already cites Centenary's accreditation number. If all 800 are accredited under that scope, the wording can be strengthened site-wide in one pass.
 - [ ] **Load the remaining catalogue** — only 20 items are on the site; the copy is explicit that the rest is coming and tells staff to ask HR in the meantime. The Skills Gap tool also only recommends from the 20, and says so.
 - [x] **Internal voice (3 Aug 2026)** — site rewritten as Fungi's in-house academy speaking to Fungi staff, not a provider selling to clients. Signed GM message from Matt Koller on the home page; "Enquire for pricing" → "Fully funded by Fungi"; "Talk to Our Team" → "Register Your Interest"; group-rate/corporate-quote copy removed.
