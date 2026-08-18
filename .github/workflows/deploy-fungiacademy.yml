@@ -89,11 +89,13 @@ jobs:
           case "$DIR" in
             *..*) echo "::error::server_dir must not contain '..' — got '$DIR'."; exit 1 ;;
           esac
-          # Fungi must never be able to write over SPS. Different company,
-          # different repository, different learners' personal information.
+          # This repository must never be able to write into another academy's
+          # folder. Different company, different repository, different learners'
+          # personal information — and they are all siblings in one public_html,
+          # so the only thing between them is this list.
           case "$DIR" in
-            public_html/spsacademy|public_html/sps)
-              echo "::error::That is the SPS academy's directory. This repository must not write to it."
+            public_html/spsacademy|public_html/mazivacademy|public_html/equinixacademy)
+              echo "::error::That is another academy's directory. This repository deploys only to public_html/fungiacademy."
               exit 1 ;;
           esac
           echo "Target '$DIR' is a real subdirectory of the web root. Good."
@@ -292,18 +294,27 @@ jobs:
             *) echo "::error::/account.php did not answer with a session probe."; fail=1 ;;
           esac
 
-          # The tenant check, and the one that matters most on a second academy.
-          # If ~/private/fungiacademy-config.php is missing or points at the
-          # wrong tenant, every page still renders perfectly — it just renders
-          # SPS's registrations and SPS's learners under Fungi's logo. Nothing
-          # errors, nothing 500s, and no other check in this file would notice.
+          # The tenant check, and the one that matters most once there is more
+          # than one academy. If ~/private/fungiacademy-config.php is missing or
+          # names the wrong tenant, every page still renders perfectly — it just
+          # renders another company's registrations and learners under this
+          # company's logo. Nothing errors, nothing 500s, and not one of the
+          # checks above would notice.
+          #
+          # Checked as "no OTHER academy's name appears", not "SPS's name does
+          # not appear", because there are four of these and the one you forget
+          # to name is the one that leaks.
           home=$(curl -sS --max-time 30 "$base/contact" || echo '')
-          case "$home" in
-            *"Sustainable Power"*|*"sps-dark-logo"*)
-              echo "::error::Fungi's contact page is carrying SPS branding. The configuration file is wrong — check ~/private/fungiacademy-config.php names tenant 'fungi'."
-              fail=1 ;;
-            *) echo "  tenant                 no SPS branding on Fungi's pages" ;;
-          esac
+          leak=""
+          for other in "SPS Academy" "Sustainable Power" "Maziv Academy" "Equinix Academy"; do
+            case "$home" in *"$other"*) leak="$leak $other" ;; esac
+          done
+          if [ -n "$leak" ]; then
+            echo "::error::This site's contact page is carrying another academy's branding ($leak). The configuration file is wrong — check ~/private/fungiacademy-config.php names tenant 'fungi'."
+            fail=1
+          else
+            echo "  tenant                 no other academy's branding on these pages"
+          fi
 
           # Server code must never be readable.
           for p in "/lib/db.php" "/schema/schema.mysql.sql" "/lib/bootstrap.php" "/lib/brand.php"; do
