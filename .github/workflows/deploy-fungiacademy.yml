@@ -94,7 +94,7 @@ jobs:
           # personal information — and they are all siblings in one public_html,
           # so the only thing between them is this list.
           case "$DIR" in
-            public_html/spsacademy|public_html/mazivacademy|public_html/equinixacademy)
+            public_html/spsacademy|public_html/mazivacademy|public_html/equinixacademy|public_html/mtacademy)
               echo "::error::That is another academy's directory. This repository deploys only to public_html/fungiacademy."
               exit 1 ;;
           esac
@@ -306,7 +306,7 @@ jobs:
           # to name is the one that leaks.
           home=$(curl -sS --max-time 30 "$base/contact" || echo '')
           leak=""
-          for other in "SPS Academy" "Sustainable Power" "Maziv Academy" "Equinix Academy"; do
+          for other in "SPS Academy" "Sustainable Power" "Maziv Academy" "Equinix Academy" "M&amp;T Academy"; do
             case "$home" in *"$other"*) leak="$leak $other" ;; esac
           done
           if [ -n "$leak" ]; then
