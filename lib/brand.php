@@ -48,6 +48,10 @@ return [
 
   /* Kgomotso's cellphone, on her instruction of 29 Oct 2026: she takes the
      academy's calls herself. The same number is on every academy. */
+  /* The Graduates page is called Alumni here (3 Nov 2026). Nav and footer
+     only; the address stays /graduates. */
+  'graduates_label' => 'Alumni',
+
   'phone'         => '+27 81 015 5135',
   'phone_href'    => '+27810155135',
   'office_hours'  => 'Monday–Friday, 08:00–17:00 SAST',
