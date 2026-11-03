@@ -186,7 +186,7 @@
      it shows no NQF level, credits, registered code or EISA anywhere below. */
   const SHORT=!!CUR.shortCourse;
   document.getElementById('m-tags').innerHTML=SHORT
-    ? '<span class="accred">Short course · not accredited</span><span>'+ESC(m.id)+'</span>'
+    ? '<span class="accred">Short course · locally accredited</span><span>'+ESC(m.id)+'</span>'
     : '<span class="accred">'+ESC(CUR.moduleNoun||'Knowledge module')+'</span>'+
       '<span>'+ESC(m.id)+'</span><span>NQF '+(m.nqf||CUR.nqf)+'</span><span>'+m.credits+' credits</span>';
 
@@ -196,7 +196,7 @@
      of: "Knowledge — 80 credits" means nothing on a qualification that has no
      knowledge component. */
   const facts=SHORT
-    ? [['Module',m.id],['Topics',m.topics.length],['Part of',CUR.title+' short course'],['Accreditation','Not accredited']]
+    ? [['Module',m.id],['Topics',m.topics.length],['Part of',CUR.title+' short course'],['Accreditation','Locally accredited']]
     : [[CUR.codeLabel||'Module code',m.code],['Credits',m.credits]];
   if(!SHORT){
     if(m.hours)facts.push(['Notional hours',m.hours]);
@@ -287,7 +287,7 @@
   const disc=document.getElementById('m-disc');
   if(disc){
     disc.textContent=SHORT
-      ? CUR.title+' is a short course and is not accredited. It carries no NQF level or credits.'
+      ? CUR.title+' is a short course, locally accredited through Centenary Networks, a QCTO-accredited Skills Development Provider.'
       : CUR.discNote||('Module codes, credit values and topic weightings '+
       'on this page are the registered curriculum for SAQA qualification '+CUR.saqa+
       (CUR.curriculum?', curriculum code '+CUR.curriculum:'')+'.');
